@@ -30,12 +30,12 @@ define(function(require) {
   Origin.on('origin:dataReady login:changed', function() {
     Origin.router.restrictRoute(FEATURE_NAME, FEATURE_PERMISSIONS);
     if (Origin.sessionModel.hasScopes(FEATURE_PERMISSIONS)) {
-      Origin.globalMenu.addItem({
+      /* Origin.globalMenu.addItem({
         "location": "global",
         "text": Origin.l10n.t(`app.${FEATURE_NAME}`),
         "icon": "fa-bug",
         "callbackEvent": `${FEATURE_NAME}:open`
-      });
+      }); */
       Origin.trigger(`${FEATURE_NAME}:ready`);
     }
   });
